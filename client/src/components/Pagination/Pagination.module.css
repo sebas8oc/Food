@@ -1,29 +1,31 @@
-.pagination {
+.pagination { 
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 60px;
+  margin-left: 350px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 40px;
   border: none;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: #003566;
+  color: whitesmoke;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-inline: 5px;
 }
 
 .button:hover {
-  background-color: #ccc;
+  background-color: #ffc300;
 }
 
 .activePage {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffc300;
+  color: #003566;
 }

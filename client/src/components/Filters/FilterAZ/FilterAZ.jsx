@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterAZ } from "../../../redux/actions";
+import style from "./FilterAZ.module.css";
 
 const FilterAZ = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const FilterAZ = () => {
   };
 
   return (
-    <div>
-      
+    <div className={style.container}>
+      <h2>Filter A-Z</h2>
       <select value={order} onChange={handlerOrder}> 
         <option value="Ascendente">A - Z</option>
         <option value="Descendente">Z - A</option>

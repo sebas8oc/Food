@@ -1,3 +1,16 @@
 .container{
-  background-color: black;
+  position: absolute;
+  background-color: rgb(32, 30, 30);
+  background-size: cover;
+}
+.filters{
+  flex-direction: column;
+  position: fixed;
+  margin-top: 250px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  width: 300px;
+
+  border: solid yellow 1px;
+  background-color: rgb(8, 6, 22);
 }

@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className={style.container}>
-      <button className={style.b}>
-        <Link to={"/"} className={style.link}>LANDING</Link>
-      </button>
+      <Link to={"/"} className={style.link}>
+        <button className={style.b}>LANDING</button>
+      </Link>
 
-      <button className={style.b}>
-        <Link to={"/home"} className={style.link}> Home</Link>
-      </button>
-      
-      <button className={style.b}>
-        <Link to={"/form"} className={style.link}> Form</Link>
-      </button>
+      <Link to={"/home"} className={style.link}>
+        <button className={style.b}>HOME</button>
+      </Link>
+
+      <Link to={"/form"} className={style.link}>
+        <button className={style.b}>FORM</button>
+      </Link>
     </div>
   );
 };

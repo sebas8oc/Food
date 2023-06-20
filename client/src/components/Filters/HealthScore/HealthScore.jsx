@@ -13,6 +13,7 @@ const HealthScoreFilter = () => {
 
   return (
     <div>
+      <h2>Filter HealthScore</h2>
       <label htmlFor="healthScoreFilter">Ordenar por puntuación de salud:</label>
       <select id="healthScoreFilter" value={order} onChange={handleFilterChange}>
         <option value="asc">0 - 100</option>

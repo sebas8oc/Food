@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { filterCreated } from "../../../redux/actions"; // Importa la acción `filterCreated`
+import style from "./FilterCreated.module.css";
 
 const FilterCreated = ({ filterCreated }) => {
   const handleFilter = (filterOption) => {
@@ -8,10 +9,10 @@ const FilterCreated = ({ filterCreated }) => {
   };
 
   return (
-    <div>
-      <h2>Filter Created</h2>
-      <button onClick={() => handleFilter("created")}>Created</button>
-      <button onClick={() => handleFilter("not-created")}>Not Created</button>
+    <div className={style.container}>
+      <h2 className={style.filter}>Filter Created</h2>
+      <button className={style.b} onClick={() => handleFilter("created")}>BDD</button>
+      <button className={style.b} onClick={() => handleFilter("not-created")}>API</button>
     </div>
   );
 };

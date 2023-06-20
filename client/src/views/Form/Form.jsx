@@ -62,12 +62,14 @@ const Form = () => {
 
   return (
     <div className={style.container}>
+      
       <NavBar/>
+      
       <h1 className={style.titulo}>create your own recipe and share it</h1>
       <form onSubmit={handleSubmit}>
 
        <h1 className={style.tipo}>Title</h1>
-
+    
         <label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         </label>
@@ -119,7 +121,8 @@ const Form = () => {
             {diet}
           </label>
         ))}
-          </div>
+        </div>
+         
         <br />
 
         <button type="submit" className={style.b1}>Create Recipe</button>

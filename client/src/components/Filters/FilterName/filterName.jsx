@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterName } from "../../../redux/actions";
+import style from "./Name.module.css"
 
 const FilterName = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,9 @@ const FilterName = () => {
 
   return (
     <div>
+      <h2>Search By Name</h2>
       <input onChange={handleInput} type="text"/>
-      <button onClick={handleSubmit}>Search</button>
+      <button className={style.b1} onClick={handleSubmit}>Search</button>
     </div>
   )
 }

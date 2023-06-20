@@ -5,7 +5,7 @@ const { Recipe, Diet } = require("../db.js");
 
 const getRecipe = async () => {
   try {
-    const response = await axios.get(API);
+    const response = await axios.get(API_F);
     const results = response.data.results.map(recipe => ({
       id: recipe.id,
       title: recipe.title,

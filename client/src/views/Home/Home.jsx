@@ -13,16 +13,20 @@ import style from "./Home.module.css";
 const Home = () => {
   return (
     <div className={style.container}>
+      <div>
       <NavBar/>
-      <FilterCreated/>
-      <FilterAZ/>
-      <FilterName/>
-      <HealthScoreFilter/>
-      <Pagination/>
-      <DietFilter/>
-      <Recipes/>
+      </div>
+      <div className={style.filters}>
+        <FilterCreated />
+        <FilterAZ />
+        <FilterName />
+        <HealthScoreFilter />
+        <DietFilter />
+      </div>
+      <Pagination />
+      <Recipes />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

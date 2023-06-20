@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+.fondo{
+  background-color: #ffd60a;
+}
+
+.container{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-inline: 100px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.name{
+ width: 700px;
+ font-size: 30px;
+ border-radius: 20px;
+ border: solid #ffd60a 5px;
+}
+
+.imagen{
+  width: 700px;
+  height: 500px;
+}
+
+.diets{
+  font-size: 25px;
+}
+
+.parrafos{
+  font-size: 20px;
+  text-align: center;
+  text-indent: 15px;
+}
