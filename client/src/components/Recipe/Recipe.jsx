@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./Recipe.module.css";
 
-const Recipe = ({title, id, image, diets, healthScore, createdInDb}) => {
+const Recipe = ({title, id, image, diets, steps, healthScore, createdInDb}) => {
   return (
     <div className={style.container}>
       <Link to={`/recipe/${id}`} className={style.link}>

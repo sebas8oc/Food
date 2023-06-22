@@ -5,7 +5,7 @@ const { Diet } = require("../db.js");
 
 const diets = async (req, res) => {
   try {
-    const response = await axios.get(API_F);
+    const response = await axios.get(API);
     const dietsSet = new Set();
 
     response.data.results.forEach((diet) => {

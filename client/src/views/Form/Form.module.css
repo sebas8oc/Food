@@ -4,6 +4,22 @@
   position: absolute;
   background-color: rgb(32, 30, 30);
 }
+.errorInput {
+  border: 2px solid red;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.uno{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  color: #ffc300;
+}
 
 h1{
   font-family: 'Noto Sans', sans-serif;

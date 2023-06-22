@@ -39,7 +39,7 @@ const Detail = () => {
             <h2>Summary</h2>
             <p>{recipeDetail[0].summary}</p>
             <h2>Steps</h2>
-            <p>{recipeDetail[0].steps}</p>
+            <p>{recipeDetail[0].steps} {recipeDetail[0].step}</p>
           </div>
         </div>
       ) : (
