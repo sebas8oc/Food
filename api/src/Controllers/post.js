@@ -19,6 +19,23 @@ const post = async (req, res) => {
   res.send("Recipe is created");
 };
 
+//....
+
+// const postDiet = async (req, res) => {
+//   let {name} = req.body
+
+//   let newDiet = await Diet.create({
+//      name
+// })
+  
+
+//   res.send("new Diet")
+// }
+
+
+
+
 module.exports = {
   post,
+  // postDiet,
 };
