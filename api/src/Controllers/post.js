@@ -1,23 +1,43 @@
 const { Recipe, Diet } = require("../db.js");
 
 const post = async (req, res) => {
-  let { title, image, summary, healthScore, step, diets, createInDb } = req.body;
+  try {
+    let { title, image, summary, healthScore, step, diets, createInDb } = req.body;
 
-  let newRecipe = await Recipe.create({
-    title,
-    image,
-    summary,
-    healthScore,
-    step,
-    createInDb,
-  });
+    if (!title || !image || !summary || !healthScore || !step || !diets || createInDb === undefined) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
 
-  let dietDB = await Diet.findAll({
-    where: { name: diets },
-  });
- newRecipe.addDiet(dietDB);
-  res.send("Recipe is created");
+    let newRecipe = await Recipe.create({
+      title,
+      image,
+      summary,
+      healthScore,
+      step,
+      createInDb,
+    });
+
+    let dietDB = await Diet.findAll({
+      where: { name: diets },
+    });
+
+    await newRecipe.addDiet(dietDB);
+    res.send("Recipe is created");
+  } catch (error) {
+    console.log(error);
+
+    if (error.name === "SequelizeUniqueConstraintError") {
+      res.status(400).json({ error: "Recipe already exists" });
+    } else {
+      res.status(500).json({ error: "Error creating recipe" });
+    }
+  }
 };
+
+module.exports = {
+  post,
+};
+
 
 //....
 
@@ -33,9 +53,4 @@ const post = async (req, res) => {
 // }
 
 
-
-
-module.exports = {
-  post,
-  // postDiet,
-};
+// postDiet,

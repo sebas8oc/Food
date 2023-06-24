@@ -5,7 +5,7 @@ const { Diet } = require("../db.js");
 
 const diets = async (req, res) => {
   try {
-    const response = await axios.get(API_D);
+    const response = await axios.get(API);
     const dietsSet = new Set();
 
     response.data.results.forEach((diet) => {
@@ -22,7 +22,8 @@ const diets = async (req, res) => {
     res.json(uniqueDiets);
   } catch (error) {
     console.log("Error fetching and saving diets:", error);
+    res.status(500).json({ error: "Error fetching and saving diets" });
   }
 };
 
-module.exports = {diets};
+module.exports = { diets };

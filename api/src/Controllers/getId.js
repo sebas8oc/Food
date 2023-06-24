@@ -1,18 +1,27 @@
-const {idName}= require ("./getRecipe");
+const { idName } = require("./getRecipe");
 
-const getId= async (req, res)=> {
-        const id = req.params.id;
-        const all = await idName();
+const getId = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const all = await idName();
 
-        if (id){
-            let recipeId = await all.filter(recipe => recipe.id == id);
+    if (!id) {
+      throw new Error("Missing parameter: id");
+    }
 
-            recipeId.length?
-            res.status(200).json(recipeId) : 
-            res.status(400).send("Recipe Not found");
-        }
-}
+    const recipeId = all.filter((recipe) => recipe.id == id);
 
-module.exports ={
-    getId,
-}
+    if (recipeId.length) {
+      res.status(200).json(recipeId);
+    } else {
+      res.status(404).send("Recipe not found");
+    }
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error al obtener la receta por ID");
+  }
+};
+
+module.exports = {
+  getId,
+};
